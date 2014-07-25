@@ -1,0 +1,13 @@
+#  pm-videoquirk for systemd
+
+[Unit]
+Description=Un-blanking video at resume
+After=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/pm/sleep.d/30videquirk resume
+
+[Install]
+WantedBy=suspend.target
+
